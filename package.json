@@ -33,7 +33,7 @@
     "@types/react-dom": "^16.9.9",
     "@typescript-eslint/eslint-plugin": "^4.24.0",
     "@typescript-eslint/parser": "^4.24.0",
-    "electron": "^10.1.5",
+    "electron": "^11.4.5",
     "electron-builder": "^22.9.1",
     "eslint": "^7.26.0",
     "eslint-config-prettier": "^8.3.0",
