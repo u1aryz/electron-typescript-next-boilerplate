@@ -1,10 +1,10 @@
 // import { NextPageContext } from 'next'
+import { GetStaticPaths, GetStaticProps } from 'next'
 import * as React from 'react'
 import Layout from '../../components/Layout'
+import ListDetail from '../../components/ListDetail'
 import { User } from '../../interfaces'
 import { findAll, findData } from '../../utils/sample-api'
-import ListDetail from '../../components/ListDetail'
-import { GetStaticPaths, GetStaticProps } from 'next'
 
 type Params = {
   id?: string

@@ -1,6 +1,6 @@
+import Link from 'next/link'
 import * as React from 'react'
 import { useEffect } from 'react'
-import Link from 'next/link'
 import Layout from '../components/Layout'
 
 const IndexPage = () => {

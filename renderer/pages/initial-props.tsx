@@ -1,6 +1,6 @@
-import * as React from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import * as React from 'react'
 import Layout from '../components/Layout'
 import List from '../components/List'
 import { User } from '../interfaces'
