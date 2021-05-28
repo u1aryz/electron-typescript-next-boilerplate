@@ -22,11 +22,7 @@ app.on('ready', async () => {
 
   const url = isDev
     ? 'http://localhost:8000/'
-    : format({
-        pathname: join(__dirname, '../renderer/out/index.html'),
-        protocol: 'file:',
-        slashes: true,
-      })
+    : format(new URL(`file://${join(__dirname, '../renderer/out/index.html')}`))
 
   mainWindow.loadURL(url)
 })
