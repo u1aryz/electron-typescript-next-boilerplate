@@ -21,7 +21,7 @@ app.on('ready', async () => {
     ? 'http://localhost:8000/'
     : format(new URL(`file://${join(__dirname, '../renderer/out/index.html')}`))
 
-  mainWindow.loadURL(url)
+  await mainWindow.loadURL(url)
 })
 
 // Quit the app once all windows are closed
