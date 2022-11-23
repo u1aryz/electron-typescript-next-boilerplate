@@ -4,14 +4,11 @@ import { useEffect } from 'react'
 
 const IndexPage = () => {
   useEffect(() => {
-    // add a listener to 'message' channel
-    global.ipcRenderer.addListener('message', (_event, args) => {
-      alert(args)
-    })
+    window.rpc.onReceiveMessage((message) => alert(message))
   }, [])
 
   const onSayHiClick = () => {
-    global.ipcRenderer.send('message', 'hi from next')
+    window.rpc.sendMessage('hi from next')
   }
 
   // noinspection HtmlUnknownTarget

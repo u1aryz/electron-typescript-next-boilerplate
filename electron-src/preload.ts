@@ -1,15 +1,10 @@
-import { ipcRenderer, IpcRenderer } from 'electron'
+import { ipcRenderer, contextBridge } from 'electron'
 
-declare global {
-  namespace NodeJS {
-    interface Global {
-      ipcRenderer: IpcRenderer
-    }
-  }
-}
-
-// Since we disabled nodeIntegration we can reintroduce
-// needed node functionality here
-process.once('loaded', () => {
-  global.ipcRenderer = ipcRenderer
+contextBridge.exposeInMainWorld('rpc', {
+  sendMessage: (message: string) => {
+    ipcRenderer.send('message', message)
+  },
+  onReceiveMessage: (listener: (message: string) => void) => {
+    ipcRenderer.on('message', (_event, message) => listener(message))
+  },
 })
