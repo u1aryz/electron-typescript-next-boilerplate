@@ -1,7 +1,6 @@
+import Layout from 'components/Layout'
 import Link from 'next/link'
-import * as React from 'react'
 import { useEffect } from 'react'
-import Layout from '../components/Layout'
 
 const IndexPage = () => {
   useEffect(() => {
@@ -15,6 +14,7 @@ const IndexPage = () => {
     global.ipcRenderer.send('message', 'hi from next')
   }
 
+  // noinspection HtmlUnknownTarget
   return (
     <Layout title="Home | Next.js + TypeScript + Electron Example">
       <h1>Hello Next.js 👋</h1>

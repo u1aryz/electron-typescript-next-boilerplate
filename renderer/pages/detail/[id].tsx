@@ -1,10 +1,9 @@
 // import { NextPageContext } from 'next'
+import Layout from 'components/Layout'
+import ListDetail from 'components/ListDetail'
+import { User } from 'interfaces'
 import { GetStaticPaths, GetStaticProps } from 'next'
-import * as React from 'react'
-import Layout from '../../components/Layout'
-import ListDetail from '../../components/ListDetail'
-import { User } from '../../interfaces'
-import { findAll, findData } from '../../utils/sample-api'
+import { findAll, findData } from 'utils/sample-api'
 
 type Params = {
   id?: string
@@ -49,10 +48,10 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         item,
       },
     }
-  } catch (err) {
+  } catch (err: any) {
     return {
       props: {
-        errors: err.message,
+        errors: err?.message,
       },
     }
   }

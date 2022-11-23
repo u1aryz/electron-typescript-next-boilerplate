@@ -1,12 +1,11 @@
+import { User } from 'interfaces'
 import Link from 'next/link'
-import React from 'react'
-
-import { User } from '../interfaces'
 
 type Props = {
   data: User
 }
 
+// noinspection HtmlUnknownTarget
 const ListItem = ({ data }: Props) => (
   <Link href="/detail/[id]" as={`/detail/${data.id}`}>
     {data.id}: {data.name}

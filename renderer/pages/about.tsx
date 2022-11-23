@@ -1,6 +1,5 @@
+import Layout from 'components/Layout'
 import Link from 'next/link'
-import * as React from 'react'
-import Layout from '../components/Layout'
 
 const AboutPage = () => (
   <Layout title="About | Next.js + TypeScript + Electron Example">
